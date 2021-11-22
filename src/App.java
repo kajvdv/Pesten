@@ -21,6 +21,9 @@ public class App {
                 else if (card.getValue() == Value.AAS) {
                     pestenCard = new ReverseTurnOrder(card);
                 }
+                else if (card.getValue() == Value.BOER) {
+                    pestenCard = new ChooseSuit(card);
+                }
                 else {
                     pestenCard = new PestenCard(card);
                 }

@@ -2,7 +2,7 @@ package pesten;
 
 public class PestenCard {
     
-    protected Card card;
+    private Card card;
 
     public PestenCard(Card card) {
         this.card = card;
@@ -23,6 +23,10 @@ public class PestenCard {
 
     public String toString() {
         return card.toString();
+    }
+
+    public Card getCard() {
+        return card;
     }
 
 }

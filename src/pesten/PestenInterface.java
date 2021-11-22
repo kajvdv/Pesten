@@ -6,4 +6,5 @@ public interface PestenInterface {
     public void showOtherHands(int handCount[]);
     public void printMessage(String message);
     public int getChoose();
+    public Suit getSuitChoose();
 }

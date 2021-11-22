@@ -7,6 +7,7 @@ public class Pesten {
     private Player currentPlayer;
     private boolean isWon = false;
     private PestenInterface playerInterface;
+    private String invalidCardMessage = "Invalid Card, play again. ";
 
     public Pesten(Player startingPlayer, CardContainer cardStack) {
         this.currentPlayer = startingPlayer;
@@ -55,7 +56,7 @@ public class Pesten {
                 }
             }
             else {
-                user.printMessage("Invalid Card, play again");
+                user.printMessage(invalidCardMessage);
             }
         }
     }
@@ -70,5 +71,9 @@ public class Pesten {
 
     public Player getCurrentPlayer() {
         return currentPlayer;
+    }
+
+    public String getInvalidCardMessage() {
+        return invalidCardMessage;
     }
 }
