@@ -1,5 +1,6 @@
 import pesten.*;
 import pesten.pestencards.*;
+import pesten.pestencards.takecards.*;
 
 public class App {
     
@@ -8,6 +9,7 @@ public class App {
         p = p.getNextPlayer();
         CardContainer deck = new CardContainer();
         // Fill deck with cards
+        DrawCounter counter = new DrawCounter();
         for (int suit = 0; suit < 4; suit++) {
             for (int val = 0; val < 13; val++) {
                 PestenCard pestenCard;
@@ -24,6 +26,9 @@ public class App {
                 else if (card.getValue() == Value.BOER) {
                     pestenCard = new ChooseSuit(card);
                 }
+                else if (card.getValue() == Value.TWEE) {
+                    pestenCard = new TakeCard(card, 2, counter);
+                }
                 else {
                     pestenCard = new PestenCard(card);
                 }
@@ -31,7 +36,7 @@ public class App {
             }
         }
         for (int i = 0; i < 3; i++) {
-            deck.addCard(new PestenCard(new Joker()));
+            deck.addCard(new TakeCard(new Joker(), 5, counter));
         }
         // End filling deck
         deck.shuffle();
